@@ -1,0 +1,10 @@
+.deps/
+.npm-cache/
+.venv/
+node_modules/
+dist/
+__pycache__/
+*.pyc
+data/app.db
+data/sources/*.pdf
+.env

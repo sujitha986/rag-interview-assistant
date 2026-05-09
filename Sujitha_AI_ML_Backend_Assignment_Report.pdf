@@ -1,0 +1,284 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> /F2 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 2935 >>
+stream
+BT
+/F1 10 Tf
+50 750 Td
+14 TL
+/F2 11 Tf
+(AI/ML & Backend Intern Assignment Report) Tj
+/F1 10 Tf
+T*
+(Candidate Name: Sujitha) Tj
+T*
+(Date: May 08, 2026) Tj
+T*
+() Tj
+T*
+/F2 11 Tf
+(1. Project Overview) Tj
+/F1 10 Tf
+T*
+(This project is an AI-powered role-based candidate screening system. The application allows a) Tj
+T*
+(candidate to upload a resume, select a target role, and attend a dynamic technical interview.) Tj
+T*
+(The questions are generated using the candidate resume, selected role, and a Retrieval-Augmented) Tj
+T*
+(Generation knowledge base built from the Section 9 books provided in the assignment.) Tj
+T*
+() Tj
+T*
+/F2 11 Tf
+(2. Objective Implemented) Tj
+/F1 10 Tf
+T*
+(The objective was to build a complete intelligent system integrating AI/ML concepts, backend API) Tj
+T*
+(architecture, frontend interaction, data handling, and system flow management. The implemented) Tj
+T*
+(system is modular and demonstrates an end-to-end interview lifecycle from resume upload to final) Tj
+T*
+(PDF report generation.) Tj
+T*
+() Tj
+T*
+/F2 11 Tf
+(3. System Flow) Tj
+/F1 10 Tf
+T*
+(The candidate uploads a PDF or text resume. The backend parses the resume and extracts skills,) Tj
+T*
+(technologies, domains, and a seniority signal. The candidate selects a target role such as AI/ML) Tj
+T*
+(Engineer. The backend constructs a role-aware query, retrieves relevant knowledge chunks from) Tj
+T*
+(the book-based knowledge base, generates interview questions, accepts candidate answers, stores) Tj
+T*
+(the interaction, and provides final feedback and summary.) Tj
+T*
+() Tj
+T*
+/F2 11 Tf
+(4. Backend Implementation) Tj
+/F1 10 Tf
+T*
+(The backend is implemented using FastAPI. It exposes APIs for health check, role listing,) Tj
+T*
+(knowledge ingestion, session creation, answer submission, session summary, and PDF report) Tj
+T*
+(generation. The backend manages all business logic including resume parsing, profile extraction,) Tj
+T*
+(retrieval, question generation, feedback generation, and persistence.) Tj
+T*
+() Tj
+T*
+/F2 11 Tf
+(5. Frontend Implementation) Tj
+/F1 10 Tf
+T*
+(The frontend is implemented using React. It provides a candidate-friendly interface for resume) Tj
+T*
+(upload, role selection, interview question display, answer submission, profile signal display,) Tj
+T*
+(source traceability, final summary, and PDF report download.) Tj
+T*
+() Tj
+T*
+/F2 11 Tf
+(6. Data Layer and Storage) Tj
+/F1 10 Tf
+T*
+(SQLite is used as the persistence layer. The database stores interview sessions, generated) Tj
+T*
+(questions, candidate answers, retrieved context, feedback, profile information, and knowledge) Tj
+T*
+(base chunks. The main tables are sessions, interactions, and knowledge_chunks. Questions and) Tj
+T*
+(answers are saved automatically when the candidate submits an answer.) Tj
+T*
+() Tj
+T*
+/F2 11 Tf
+(7. RAG Pipeline) Tj
+/F1 10 Tf
+T*
+(The Retrieval-Augmented Generation pipeline uses the Section 9 books as the primary knowledge) Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> /F2 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 2889 >>
+stream
+BT
+/F1 10 Tf
+50 750 Td
+14 TL
+(source. The ingestion process extracts text from PDF books, splits the text into meaningful) Tj
+T*
+(chunks, creates local embeddings, and stores the chunks and embeddings in SQLite. During the) Tj
+T*
+(interview, the retriever searches across the ingested books and returns relevant chunks from) Tj
+T*
+(multiple sources. The generated questions are grounded in these retrieved chunks.) Tj
+T*
+() Tj
+T*
+/F2 11 Tf
+(8. Section 9 Knowledge Base Usage) Tj
+/F1 10 Tf
+T*
+(The system uses the provided machine learning books as the RAG knowledge source, including) Tj
+T*
+(Machine Learning by Tom Mitchell, The Hundred-Page Machine Learning Book, Introduction to) Tj
+T*
+(Machine Learning with Python, Master Machine Learning Algorithms, Pattern Recognition and) Tj
+T*
+(Machine Learning, and Artificial Intelligence, Machine Learning, and Deep Learning. The user) Tj
+T*
+(interface shows source PDF names under each question for traceability.) Tj
+T*
+() Tj
+T*
+/F2 11 Tf
+(9. Question and Answer Storage) Tj
+/F1 10 Tf
+T*
+(Each generated question and submitted answer is stored in the SQLite database in the) Tj
+T*
+(interactions table. The stored record includes session ID, question, answer, retrieved context,) Tj
+T*
+(feedback, and timestamps. There is no manual save button because storage happens automatically) Tj
+T*
+(when the Submit Answer button is clicked.) Tj
+T*
+() Tj
+T*
+/F2 11 Tf
+(10. Output and Reporting) Tj
+/F1 10 Tf
+T*
+(After the interview is completed, the system displays a structured summary and provides a) Tj
+T*
+(Download PDF Report button. The report contains candidate profile signals, questions asked,) Tj
+T*
+(answers given, feedback, and sources used. This makes it easy to verify stored interview records) Tj
+T*
+(without manually opening the database.) Tj
+T*
+() Tj
+T*
+/F2 11 Tf
+(11. Key Design Decisions) Tj
+/F1 10 Tf
+T*
+(FastAPI was selected for the backend because it is lightweight, structured, and suitable for) Tj
+T*
+(API-driven systems. React was selected for the frontend to provide a smooth interactive) Tj
+T*
+(interview flow. SQLite was selected because it is simple, portable, and sufficient for) Tj
+T*
+(assignment-level persistence. Local deterministic embeddings were used so the project can run) Tj
+T*
+(without requiring paid external API keys.) Tj
+T*
+() Tj
+T*
+/F2 11 Tf
+(12. Requirements Satisfaction) Tj
+/F1 10 Tf
+T*
+(- Resume upload: Implemented.) Tj
+T*
+(- Role selection: Implemented.) Tj
+T*
+(- Resume parsing and profile extraction: Implemented.) Tj
+T*
+(- Role-specific RAG retrieval: Implemented.) Tj
+T*
+(- Knowledge ingestion and chunking: Implemented.) Tj
+T*
+(- Embedding generation and vector-like retrieval: Implemented.) Tj
+T*
+(- Dynamic question generation: Implemented.) Tj
+T*
+(- Interactive interview flow: Implemented.) Tj
+T*
+(- Session continuity: Implemented.) Tj
+T*
+(- Question and answer storage: Implemented.) Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> /F2 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 793 >>
+stream
+BT
+/F1 10 Tf
+50 750 Td
+14 TL
+(- Structured summary: Implemented.) Tj
+T*
+(- Backend API design: Implemented.) Tj
+T*
+(- React frontend: Implemented.) Tj
+T*
+(- Database persistence: Implemented.) Tj
+T*
+(- Source traceability: Implemented.) Tj
+T*
+(- PDF report generation: Implemented.) Tj
+T*
+() Tj
+T*
+/F2 11 Tf
+(13. Conclusion) Tj
+/F1 10 Tf
+T*
+(The completed system satisfies the assignment requirements by combining a complete backend) Tj
+T*
+(service, an interactive frontend, database persistence, a RAG pipeline using the provided books,) Tj
+T*
+(dynamic interview question generation, answer storage, source traceability, and downloadable PDF) Tj
+T*
+(reporting. The project demonstrates practical AI/ML integration with backend engineering and) Tj
+T*
+(user-facing application design.) Tj
+T*
+ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000366 00000 n 
+0000003353 00000 n 
+0000003592 00000 n 
+0000006533 00000 n 
+0000006772 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+7616
+%%EOF
