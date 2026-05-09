@@ -15,7 +15,7 @@ class Settings:
     embedding_dimensions = _int_env("EMBEDDING_DIMENSIONS", 384)
     cors_origins = [
         origin.strip()
-        for origin in os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")
+        for origin in os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173,https://sujichowdary24-rag-interview-assistant.hf.space").split(",")
         if origin.strip()
     ]
     openai_api_key = os.getenv("OPENAI_API_KEY") or None
