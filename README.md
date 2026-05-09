@@ -1,3 +1,18 @@
+
+---
+title: Rag Interview Assistant
+emoji: 🧠
+colorFrom: green
+colorTo: blue
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
+
+
+
+<<<<<<< HEAD
 # Role-Based AI Candidate Screening System
 
 An end-to-end AI/ML and backend intern assessment project. The system parses a candidate resume, selects a target role, retrieves role-specific knowledge from Section 9 resources, generates grounded interview questions, stores the full session, and returns a structured summary.
@@ -118,3 +133,17 @@ The populated local database contained 6,934 chunks after ingesting the availabl
 4. Select a role.
 5. Answer several questions.
 6. Show the summary and the cited knowledge sources.
+=======
+---
+title: Rag Interview Assistant
+emoji: 📚
+colorFrom: red
+colorTo: yellow
+sdk: docker
+pinned: false
+license: apache-2.0
+short_description: RAG-based AI interview assistant with resume parsing, role-b
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+>>>>>>> ee3a095d851c61f90bb3631df70e91284d46f632
