@@ -3,7 +3,7 @@ from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+
 
 from app.api.routes import router
 from app.core.config import settings
@@ -30,10 +30,4 @@ app.include_router(router)
 
 frontend_dist = Path(__file__).resolve().parents[2] / "frontend" / "dist"
 if frontend_dist.exists():
-    # ✅ Mount assets separately, NOT the root "/"
-    app.mount("/assets", StaticFiles(directory=frontend_dist / "assets"), name="assets")
-
-    # ✅ Catch-all serves index.html for any unmatched route
-    @app.get("/{full_path:path}")
-    async def serve_frontend(full_path: str):
-        return FileResponse(frontend_dist / "index.html")
+    app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="frontend")
