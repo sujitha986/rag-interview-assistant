@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { ArrowDownToLine, ArrowRight, CheckCircle2, FileText, Loader2, Send, Sparkles } from "lucide-react";
 import "./styles.css";
 
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8000";
+const API_BASE = import.meta.env.VITE_API_BASE || "";
 
 function App() {
   const [roles, setRoles] = useState([]);

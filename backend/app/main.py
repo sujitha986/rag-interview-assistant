@@ -26,6 +26,13 @@ def startup() -> None:
 
 app.include_router(router)
 
+
 frontend_dist = Path(__file__).resolve().parents[2] / "frontend" / "dist"
 if frontend_dist.exists():
-    app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="frontend")
+    # ✅ Mount assets separately, NOT the root "/"
+    app.mount("/assets", StaticFiles(directory=frontend_dist / "assets"), name="assets")
+
+    # ✅ Catch-all serves index.html for any unmatched route
+    @app.get("/{full_path:path}")
+    async def serve_frontend(full_path: str):
+        return FileResponse(frontend_dist / "index.html")
